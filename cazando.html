@@ -2,20 +2,26 @@
 <html>
 <head>
   <title>Juego Cazando</title>
+  <link rel="stylesheet" href="cazando.css">
+  <script src="cazando.js" defer></script>
 
 </head>
 <body>
 
   <h1>Juego Cazando</h1>
-  <p>Autor: Tu Nombre o Nickname</p>
+  <p>Autor: Arturo Cueva</p>
+
+  <div class="contenedor">
+     <canvas id="juego" width="600" height="400"></canvas>
+  </div>
 
 
   <div class="controles">
-    <button>⬆</button>
+    <button id="btnArriba" >⬆</button>
     <br>
-    <button>⬅</button>
-    <button>⬇</button>
-    <button>➡</button>
+    <button id="btnIzquierda">⬅</button>
+    <button id="btnAbajo">⬇</button>
+    <button id="btnDerecha">➡</button>
   </div>
 
 
