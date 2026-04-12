@@ -1,9 +1,5 @@
 let canvas = document.getElementById('areaJuego');
 let ctx = canvas.getContext('2d');
-let btnArriba = document.getElementById('btnArriba');
-let btnAbajo = document.getElementById('btnAbajo');
-let btnIzquierda = document.getElementById('btnIzquierda');
-let btnDerecha = document.getElementById('btnDerecha');
 
 const VELOCIDAD = 10;
 let gatoX = 0;
@@ -33,6 +29,17 @@ function limpiarCanva() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function detectarColision() {
+    if (
+        gatoX < comidaX + ANCHO_COMIDA &&
+        gatoX + ANCHO_GATO > comidaX &&
+        gatoY < comidaY + ALTO_COMIDA &&
+        gatoY + ALTURA_GATO > comidaY
+    ) {
+        alert('¡El gato atrapó la comida!');
+    }
+}
+
 function iniciarJuego() {
     gatoX = (canvas.width / 2) - (ANCHO_GATO / 2);
     gatoY = (canvas.height / 2) - (ALTURA_GATO / 2);
@@ -49,6 +56,7 @@ function moverIzquierda() {
     limpiarCanva();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverDerecha() {
@@ -56,6 +64,7 @@ function moverDerecha() {
     limpiarCanva();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverArriba() {
@@ -63,6 +72,7 @@ function moverArriba() {
     limpiarCanva();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 function moverAbajo() {
@@ -70,6 +80,7 @@ function moverAbajo() {
     limpiarCanva();
     graficarGato();
     graficarComida();
+    detectarColision();
 }
 
 document.getElementById("btnArriba").onclick = moverArriba;
