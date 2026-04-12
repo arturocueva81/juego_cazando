@@ -9,8 +9,10 @@ const ALTURA_GATO = 50;
 
 let comidaX = 0;
 let comidaY = 0;
-const ANCHO_COMIDA = 20;
-const ALTO_COMIDA = 20;
+const ANCHO_COMIDA = 30;
+const ALTO_COMIDA = 30;
+
+let puntos = 0;
 
 function graficar(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
@@ -29,6 +31,11 @@ function limpiarCanva() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function reposicionarComida() {
+    comidaX = generarAleatorio(0, canvas.width - ANCHO_COMIDA);
+    comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
+}
+
 function detectarColision() {
     if (
         gatoX < comidaX + ANCHO_COMIDA &&
@@ -36,7 +43,9 @@ function detectarColision() {
         gatoY < comidaY + ALTO_COMIDA &&
         gatoY + ALTURA_GATO > comidaY
     ) {
-        alert('¡El gato atrapó la comida!');
+        puntos += 1;
+        mostrarEnSpan('puntos', puntos);
+        reposicionarComida();
     }
 }
 
@@ -47,12 +56,16 @@ function iniciarJuego() {
     comidaX = canvas.width - ANCHO_COMIDA;
     comidaY = canvas.height - ALTO_COMIDA;
 
+    puntos = 0;
+    mostrarEnSpan('puntos', puntos);
+
     graficarGato();
     graficarComida();
 }
 
 function moverIzquierda() {
-    gatoX -= 10;
+    if (gatoX - VELOCIDAD >= 0)
+        gatoX -= VELOCIDAD;
     limpiarCanva();
     graficarGato();
     graficarComida();
@@ -60,7 +73,8 @@ function moverIzquierda() {
 }
 
 function moverDerecha() {
-    gatoX += 10;
+    if (gatoX + ANCHO_GATO + VELOCIDAD <= canvas.width)
+        gatoX += VELOCIDAD;
     limpiarCanva();
     graficarGato();
     graficarComida();
@@ -68,7 +82,8 @@ function moverDerecha() {
 }
 
 function moverArriba() {
-    gatoY -= 10;
+    if (gatoY - VELOCIDAD >= 0)
+        gatoY -= VELOCIDAD;
     limpiarCanva();
     graficarGato();
     graficarComida();
@@ -76,7 +91,8 @@ function moverArriba() {
 }
 
 function moverAbajo() {
-    gatoY += 10;
+    if (gatoY + ALTURA_GATO + VELOCIDAD <= canvas.height)
+        gatoY += VELOCIDAD;
     limpiarCanva();
     graficarGato();
     graficarComida();
