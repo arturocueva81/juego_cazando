@@ -13,6 +13,7 @@ const ANCHO_COMIDA = 30;
 const ALTO_COMIDA = 30;
 
 let puntos = 0;
+let tiempo = 10;
 
 function graficar(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
@@ -36,6 +37,11 @@ function reposicionarComida() {
     comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
 }
 
+function restarTiempo() {
+    tiempo -= 1;
+    mostrarEnSpan('tiempo', tiempo);
+}
+
 function detectarColision() {
     if (
         gatoX < comidaX + ANCHO_COMIDA &&
@@ -57,7 +63,11 @@ function iniciarJuego() {
     comidaY = canvas.height - ALTO_COMIDA;
 
     puntos = 0;
+    tiempo = 10;
     mostrarEnSpan('puntos', puntos);
+    mostrarEnSpan('tiempo', tiempo);
+
+    setInterval(restarTiempo, 1000);
 
     graficarGato();
     graficarComida();
