@@ -9,11 +9,12 @@ const ALTURA_GATO = 50;
 
 let comidaX = 0;
 let comidaY = 0;
-const ANCHO_COMIDA = 30;
-const ALTO_COMIDA = 30;
+const ANCHO_COMIDA = 20;
+const ALTO_COMIDA = 20;
 
 let puntos = 0;
 let tiempo = 10;
+let intervalo;
 
 function graficar(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
@@ -40,6 +41,11 @@ function reposicionarComida() {
 function restarTiempo() {
     tiempo -= 1;
     mostrarEnSpan('tiempo', tiempo);
+
+    if (tiempo <= 0) {
+        clearInterval(intervalo);
+        alert('¡Game Over! No lograste atrapar 6 comidas.');
+    }
 }
 
 function detectarColision() {
@@ -52,6 +58,11 @@ function detectarColision() {
         puntos += 1;
         mostrarEnSpan('puntos', puntos);
         reposicionarComida();
+
+        if (puntos >= 6) {
+            clearInterval(intervalo);
+            alert('¡Ganaste! Atrapaste 6 comidas.');
+        }
     }
 }
 
@@ -67,7 +78,7 @@ function iniciarJuego() {
     mostrarEnSpan('puntos', puntos);
     mostrarEnSpan('tiempo', tiempo);
 
-    setInterval(restarTiempo, 1000);
+    intervalo = setInterval(restarTiempo, 1000);
 
     graficarGato();
     graficarComida();
