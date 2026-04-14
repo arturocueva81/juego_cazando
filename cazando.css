@@ -10,6 +10,12 @@ h1 {
   margin-bottom: 5px;
 }
 
+div {
+  width: 500px;
+  margin: 5px auto;
+  border: 2px solid black;
+}
+
 .panel {
   margin: 15px 0;
   font-size: 18px;
@@ -21,6 +27,11 @@ h1 {
 canvas {
   background: white;
   border: 2px solid black;
+}
+
+#panelMensaje {
+  border: 3px solid black;
+  display: none;
 }
 
 .controles {

@@ -1,40 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Juego Cazando</title>
-  <link rel="stylesheet" href="cazando.css">
-  <script src="cazando.js" defer></script>
-  <script src="utils.js" defer></script>
+  <head>
+    <title>Juego Cazando</title>
+    <link rel="stylesheet" href="cazando.css" />
+    <script src="cazando.js" defer></script>
+    <script src="utils.js" defer></script>
+  </head>
+  <body onload="iniciarJuego()">
+    <h1>Juego Cazando</h1>
+    <p>Autor: Arturo Cueva</p>
 
-</head>
-<body onload="iniciarJuego();">
+    <div class="contenedor">
+      <canvas id="areaJuego" width="500" height="500"></canvas>
+    </div>
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Arturo Cueva</p>
+    <div id="panelMensaje">
+      <p id="textoMensaje"></p>
+    </div>
 
-  <div class="contenedor">
-     <canvas id="areaJuego" width="500" height="500"></canvas>
-  </div>
+    <div class="controles">
+      <button id="btnArriba">⬆</button>
+      <br />
+      <button id="btnIzquierda">⬅</button>
+      <button id="btnAbajo">⬇</button>
+      <button id="btnDerecha">➡</button>
+    </div>
 
+    <div>
+      <span>Puntos: <span id="spanPuntaje">0</span></span>
+      <span>Tiempo: <span id="tiempo">0</span></span>
+    </div>
 
-  <div class="controles">
-    <button id="btnArriba" >⬆</button>
-    <br>
-    <button id="btnIzquierda">⬅</button>
-    <button id="btnAbajo">⬇</button>
-    <button id="btnDerecha">➡</button>
-  </div>
+    <div>
+      <button id="btnReiniciar">Restart</button>
+    </div>
 
-
-  <div class="panel">
-    <p>Puntos: <span id="spanPuntaje">0</span></p>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-    <br>
-      <button id="btnReiniciar">Restart </button>
-  </div>
-
-  <p id="mensaje"></p>
-
-
-</body>
+    <p id="mensaje"></p>
+  </body>
 </html>
