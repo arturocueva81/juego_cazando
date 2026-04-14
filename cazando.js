@@ -1,6 +1,9 @@
 let canvas = document.getElementById("areaJuego");
 let ctx = canvas.getContext("2d");
 
+let direccion = "abajo";
+let intervaloMovimiento = null;
+
 const VELOCIDAD = 10;
 
 let gatoX = 0;
@@ -40,54 +43,44 @@ function iniciarJuego() {
 
   puntaje = 0;
   tiempo  = 30;
+  direccion = "abajo";
 
   mostrarEnSpan("spanPuntaje", puntaje);
   mostrarEnSpan("tiempo", tiempo);
 
-  ocultarMensaje();
+  document.getElementById("textoMensaje").textContent = "¡A divertirnos!";
   limpiarCanva();
   graficarGato();
   graficarComida();
-
+  iniciarMovimiento();
   iniciarTemporizador();
 }
 
-function moverIzquierda() {
-  if (gatoX > 0) gatoX -= VELOCIDAD;
+function mover() {
+  if (direccion === "izquierda") {
+    if (gatoX > 0) gatoX -= VELOCIDAD;
+  } else if (direccion === "derecha") {
+    if (gatoX + ANCHO_GATO < canvas.width) gatoX += VELOCIDAD;
+  } else if (direccion === "arriba") {
+    if (gatoY > 0) gatoY -= VELOCIDAD;
+  } else if (direccion === "abajo") {
+    if (gatoY + ALTO_GATO < canvas.height) gatoY += VELOCIDAD;
+  }
   limpiarCanva();
   graficarGato();
   graficarComida();
   detectarColision();
 }
 
-function moverDerecha() {
-  if (gatoX + ANCHO_GATO < canvas.width) gatoX += VELOCIDAD;
-  limpiarCanva();
-  graficarGato();
-  graficarComida();
-  detectarColision();
+function iniciarMovimiento() {
+  clearInterval(intervaloMovimiento);
+  intervaloMovimiento = setInterval(mover, 150);
 }
 
-function moverArriba() {
-  if (gatoY > 0) gatoY -= VELOCIDAD;
-  limpiarCanva();
-  graficarGato();
-  graficarComida();
-  detectarColision();
-}
-
-function moverAbajo() {
-  if (gatoY + ALTO_GATO < canvas.height) gatoY += VELOCIDAD;
-  limpiarCanva();
-  graficarGato();
-  graficarComida();
-  detectarColision();
-}
-
-document.getElementById("btnArriba").onclick    = () => moverArriba();
-document.getElementById("btnAbajo").onclick     = () => moverAbajo();
-document.getElementById("btnIzquierda").onclick = () => moverIzquierda();
-document.getElementById("btnDerecha").onclick   = () => moverDerecha();
+document.getElementById("btnArriba").onclick    = () => { direccion = "arriba"; };
+document.getElementById("btnAbajo").onclick     = () => { direccion = "abajo"; };
+document.getElementById("btnIzquierda").onclick = () => { direccion = "izquierda"; };
+document.getElementById("btnDerecha").onclick   = () => { direccion = "derecha"; };
 
 function detectarColision() {
   let gatoDerechaX   = gatoX + ANCHO_GATO;
@@ -103,6 +96,7 @@ function detectarColision() {
 
     if (puntaje === 6) {
       clearInterval(intervalo);
+      clearInterval(intervaloMovimiento);
       mostrarMensaje("win");
     }
   }
@@ -119,6 +113,7 @@ function reducirTiempo() {
 
   if (tiempo === 0) {
     clearInterval(intervalo);
+    clearInterval(intervaloMovimiento);
     mostrarMensaje("lose");
   }
 }
@@ -129,10 +124,11 @@ function iniciarTemporizador() {
 }
 
 function reiniciarJuego() {
-  clearInterval(intervalo);
+  clearInterval(intervaloMovimiento);
 
   puntaje = 0;
   tiempo  = 30;
+  direccion = "abajo";
 
   gatoX = canvas.width  / 2 - ANCHO_GATO  / 2;
   gatoY = canvas.height / 2 - ALTO_GATO   / 2;
@@ -143,15 +139,15 @@ function reiniciarJuego() {
   mostrarEnSpan("spanPuntaje", puntaje);
   mostrarEnSpan("tiempo", tiempo);
 
-  ocultarMensaje();
+  document.getElementById("textoMensaje").textContent = "¡A divertirnos!";
   limpiarCanva();
   graficarGato();
   graficarComida();
+  iniciarMovimiento();
   iniciarTemporizador();
 }
 
 function mostrarMensaje(tipo) {
-  const panel    = document.getElementById("panelMensaje");
   const textoMsg = document.getElementById("textoMensaje");
 
   if (tipo === "win") {
@@ -162,12 +158,6 @@ function mostrarMensaje(tipo) {
     textoMsg.textContent = "GAME OVER. Puntaje: " + puntaje;
     textoMsg.style.color = "black";
   }
-
-  panel.style.display = "block";
-}
-
-function ocultarMensaje() {
-  document.getElementById("panelMensaje").style.display = "none";
 }
 
 document.getElementById("btnReiniciar").onclick = () => reiniciarJuego();

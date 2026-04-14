@@ -30,8 +30,7 @@ canvas {
 }
 
 #panelMensaje {
-  border: 3px solid black;
-  display: none;
+  display: block;
 }
 
 .controles {
