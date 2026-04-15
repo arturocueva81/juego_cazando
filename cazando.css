@@ -4,7 +4,7 @@ body {
   text-align: center;
   font-family: 'Press Start 2P', Arial, sans-serif;
   background: #2a5253;
-  background-image: ;
+  background-image: url('img_cazando/back_pagina.jpg') ;
   margin: 0;
   padding: 20px;
   color: #fff;
@@ -20,7 +20,7 @@ h1 {
 
 .autor {
   font-size: 10px;
-  color: #aaa;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -39,10 +39,11 @@ canvas {
 }
 
 #panelMensaje {
-  display: block;
-  padding: 10px 0;
-  background: #16213e;
-  border: 3px solid #f5c518;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 0;
 }
 
 #textoMensaje {
@@ -117,4 +118,31 @@ button:active {
   font-weight: bold;
   color: #f5c518;
   margin-top: 15px;
+}
+
+.contenedor {
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+  border: none;
+}
+
+#btnIniciar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  padding: 15px 30px;
+  background: #f5c518;
+  color: #1a1a2e;
+  border: 3px solid #e07b00;
+  box-shadow: 4px 4px 0px #e07b00;
+  cursor: pointer;
+  z-index: 10;
+}
+
+#btnIniciar:hover {
+  background: #ffd700;
+  transform: translate(-48%, -48%);
 }

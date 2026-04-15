@@ -1,0 +1,21 @@
+
+Deseo colocar una imagen de fondo llamada back_pagina.jpg, ubicada en la carpeta img_cazando (ruta: .../img_cazando). 
+Genera el código CSS necesario usando rutas relativas para que la imagen cubra toda la pantalla sin repetirse.
+
+Ahora pongamos un fondo dentro del Canvas: la imagen se llama fondo.png y está en la misma carpeta de imágenes. 
+Modifica la función limpiarCanva en JavaScript para que dibuje esta imagen antes de los personajes.
+
+Agreguemos el gato y la comida como imágenes en lugar de los rectángulos naranja y verde. 
+Usa cat_down.png para el gato y food_full.png para la comida. 
+Modifica las funciones graficarGato y graficarComida usando ctx.drawImage
+
+Haz que la imagen del gato cambie según la dirección del movimiento. 
+Carga las imágenes cat_up.png, cat_down.png, cat_left.png y cat_right.png, 
+y actualiza la imagen activa dentro de la función mover
+
+Agrega imágenes al panel de mensajes: muestra cat_WIN.png y food_empty.png si el jugador gana,
+ y cat_LOSE.png con food_full.png si pierde. Ajusta el HTML y CSS para que las imágenes se alineen con el texto
+
+ Deseo agregar un botón 'INICIAR' que esté superpuesto físicamente sobre el canvas. 
+ El botón debe desaparecer al iniciar el juego y reaparecer cuando el jugador gane o pierda, 
+ reemplazando la función del botón Restart externo

@@ -3,20 +3,26 @@
   <head>
     <title>Juego Cazando</title>
     <link rel="stylesheet" href="cazando.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <script src="cazando.js" defer></script>
     <script src="utils.js" defer></script>
   </head>
-  <body onload="iniciarJuego()">
+  <body>
     <h1>🐱 Juego Cazando</h1>
     <p class="autor">Autor: Arturo Cueva</p>
 
     <div class="contenedor">
       <canvas id="areaJuego" width="500" height="500"></canvas>
+      <button id="btnIniciar">▶ INICIAR</button>
     </div>
 
     <div id="panelMensaje">
+      <img id="imgGatoMensaje" src="" alt="" width="60" height="60" />
       <p id="textoMensaje">¡A divertirnos!</p>
+      <img id="imgComidaMensaje" src="" alt="" width="50" height="50" />
     </div>
 
     <div class="controles">
