@@ -1,52 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
   text-align: center;
-  font-family: Arial, sans-serif;
-  background: #75ebdb;
+  font-family: 'Press Start 2P', Arial, sans-serif;
+  background: #2a5253;
+  background-image: ;
   margin: 0;
   padding: 20px;
+  color: #fff;
 }
 
 h1 {
+  font-size: 24px;
+  color: #f5c518;
+  text-shadow: 3px 3px 0px #e07b00;
   margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.autor {
+  font-size: 10px;
+  color: #aaa;
+  margin-bottom: 10px;
 }
 
 div {
   width: 500px;
   margin: 5px auto;
-  border: 2px solid black;
-}
-
-.panel {
-  margin: 15px 0;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+  border: 3px solid #f5c518;
+  box-shadow: 4px 4px 0px #e07b00;
+  background: #16213e;
 }
 
 canvas {
-  background: white;
-  border: 2px solid black;
+  background: #0f3460;
+  border: 3px solid #f5c518;
+  display: block;
 }
 
 #panelMensaje {
   display: block;
+  padding: 10px 0;
+  background: #16213e;
+  border: 3px solid #f5c518;
+}
+
+#textoMensaje {
+  font-size: 13px;
+  color: #f5c518;
+  margin: 0;
+  letter-spacing: 1px;
 }
 
 .controles {
-  margin-top: 20px;
+  margin-top: 5px;
+  background: #16213e;
+  padding: 10px 0;
 }
 
 button {
-  margin: 5px;
-  padding: 10px 16px;
+  margin: 4px;
+  padding: 12px 18px;
   font-size: 18px;
+  font-family: 'Press Start 2P', Arial, sans-serif;
   cursor: pointer;
+  background: #f5c518;
+  color: #1a1a2e;
+  border: 3px solid #e07b00;
+  box-shadow: 3px 3px 0px #e07b00;
+  border-radius: 4px;
+  transition: all 0.1s;
+}
+
+button:hover {
+  background: #ffd700;
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #e07b00;
+}
+
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+.marcador {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 12px;
+  color: #f5c518;
+  background: #16213e;
+}
+
+.reiniciar {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+#btnReiniciar {
+  font-size: 12px;
+  padding: 10px 20px;
+  background: #e05c4b;
+  border-color: #a03020;
+  box-shadow: 3px 3px 0px #a03020;
+  color: #fff;
+}
+
+#btnReiniciar:hover {
+  background: #ff6b5b;
 }
 
 #mensaje {
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
-  color: darkred;
+  color: #f5c518;
   margin-top: 15px;
 }

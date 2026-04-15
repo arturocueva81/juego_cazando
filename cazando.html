@@ -3,20 +3,21 @@
   <head>
     <title>Juego Cazando</title>
     <link rel="stylesheet" href="cazando.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="cazando.js" defer></script>
     <script src="utils.js" defer></script>
   </head>
   <body onload="iniciarJuego()">
-    <h1>Juego Cazando</h1>
-    <p>Autor: Arturo Cueva</p>
+    <h1>🐱 Juego Cazando</h1>
+    <p class="autor">Autor: Arturo Cueva</p>
 
     <div class="contenedor">
       <canvas id="areaJuego" width="500" height="500"></canvas>
     </div>
 
     <div id="panelMensaje">
-      <p id="textoMensaje">¡A divertirnos!</p> <!-- Cambiar el texto aquí -->
-    </div>  
+      <p id="textoMensaje">¡A divertirnos!</p>
+    </div>
 
     <div class="controles">
       <button id="btnArriba">⬆</button>
@@ -26,13 +27,13 @@
       <button id="btnDerecha">➡</button>
     </div>
 
-    <div>
-      <span>Puntos: <span id="spanPuntaje">0</span></span>
-      <span>Tiempo: <span id="tiempo">0</span></span>
+    <div class="marcador">
+      <span>🏆 Puntos: <span id="spanPuntaje">0</span></span>
+      <span>⏱ Tiempo: <span id="tiempo">0</span></span>
     </div>
 
-    <div>
-      <button id="btnReiniciar">Restart</button>
+    <div class="reiniciar">
+      <button id="btnReiniciar">🔄 Restart</button>
     </div>
 
     <p id="mensaje"></p>

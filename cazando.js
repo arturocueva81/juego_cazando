@@ -152,11 +152,11 @@ function mostrarMensaje(tipo) {
 
   if (tipo === "win") {
     textoMsg.textContent = "¡¡YOU WIN!!. Puntaje: " + puntaje;
-    textoMsg.style.color = "black"
+    textoMsg.style.color = "#f5c518"
     ;
   } else {
     textoMsg.textContent = "GAME OVER. Puntaje: " + puntaje;
-    textoMsg.style.color = "black";
+    textoMsg.style.color = "#f5c518";
   }
 }
 

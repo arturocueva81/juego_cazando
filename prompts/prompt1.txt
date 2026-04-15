@@ -1,0 +1,28 @@
+--TALLER. PARTE 3
+--MEJORA DE INTERFAZ GRAFICA
+
+Eres un asistente experto en desarrollo web front-end. Voy a darte el código de un juego llamado "Juego Cazando", 
+desarrollado por un estudiante de primer nivel sin experiencia en JavaScript. 
+Tu tarea es mejorar ÚNICAMENTE la interfaz gráfica del juego, modificando SOLO los archivos HTML y CSS. 
+Está ESTRICTAMENTE PROHIBIDO modificar, mover, eliminar o agregar cualquier línea de código JavaScript, 
+ni tampoco modificar los archivos cazando.js o utils.js.
+
+1. 
+Quiero mejorar su interfaz gráfica aplicando un estilo moderno 
+tipo pixel-art/retro gaming, usando solo HTML y CSS.
+
+Las mejoras deben incluir:
+- Tipografía temática (pixel/retro)
+- Botones de dirección con mejor diseño (forma, color, hover)
+- Panel de puntos y tiempo más visual y destacado
+- Fondo y colores coherentes con la temática del juego
+- Panel de mensajes con estilo llamativo para win/lose
+
+RESTRICCIONES IMPORTANTES:
+- No modificar ningún archivo JavaScript
+- No eliminar ni renombrar ningún id o class existente en el HTML
+- No cambiar el atributo onload="iniciarJuego()" del body
+- No cambiar width="500" height="500" del canvas
+
+Cuando confirme, te paso el HTML y CSS actual para que hagas las mejoras.
+
