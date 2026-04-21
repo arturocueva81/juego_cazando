@@ -136,7 +136,9 @@ function detectarColision() {
     gatoAbajoY > comidaY
   ) {
     reubicarComida();
+    reducirTiempo();
     puntaje = puntaje + 1;
+
     mostrarEnSpan("spanPuntaje", puntaje);
 
     if (puntaje === 6) {
