@@ -8,22 +8,23 @@ const imgFondo = new Image();
 imgFondo.src = "img_cazando/fondo.png";
 
 const imgGato = new Image();
-imgGato.src = "img_cazando/cat_down.png";
+imgGato.src = "img_cazando/silvestre.png";
+imgGato.background= "transparent";
 
 const imgComida = new Image();
-imgComida.src = "img_cazando/food_full.png";
+imgComida.src = "img_cazando/piolin.png";
 
 const imgGatoArriba = new Image();
-imgGatoArriba.src = "img_cazando/cat_up.png";
+imgGatoArriba.src = "img_cazando/silvestre.png";
 
 const imgGatoAbajo = new Image();
-imgGatoAbajo.src = "img_cazando/cat_down.png";
+imgGatoAbajo.src = "img_cazando/silvestre.png";
 
 const imgGatoIzquierda = new Image();
-imgGatoIzquierda.src = "img_cazando/cat_left.png";
+imgGatoIzquierda.src = "img_cazando/silvestre.png";
 
 const imgGatoDerecha = new Image();
-imgGatoDerecha.src = "img_cazando/cat_right.png";
+imgGatoDerecha.src = "img_cazando/silvestre.png";
 
 let imgGatoActual = imgGatoAbajo;
 
@@ -210,13 +211,13 @@ function mostrarMensaje(tipo) {
   if (tipo === "win") {
     textoMsg.textContent = "¡¡YOU WIN!!. Puntaje: " + puntaje;
     textoMsg.style.color = "#27ae60";
-    imgGatoMsg.src = "img_cazando/cat_WIN.png";
-    imgComidaMsg.src = "img_cazando/food_empty.png";
+    imgGatoMsg.src = "img_cazando/silvestre.png";
+    imgComidaMsg.src = "img_cazando/piolin.png";
   } else {
     textoMsg.textContent = "GAME OVER. Puntaje: " + puntaje;
     textoMsg.style.color = "#e05c4b";
-    imgGatoMsg.src = "img_cazando/cat_LOSE.png";
-    imgComidaMsg.src = "img_cazando/food_full.png";
+    imgGatoMsg.src = "img_cazando/silvestre.png";
+    imgComidaMsg.src = "img_cazando/piolin.png";
   }
 }
 
