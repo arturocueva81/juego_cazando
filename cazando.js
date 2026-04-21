@@ -64,7 +64,7 @@ function iniciarJuego() {
   comidaY = canvas.height - ALTO_COMIDA - 10;
 
   puntaje = 0;
-  tiempo = 30;
+  tiempo = 15;
   direccion = "abajo";
   imgGatoActual = imgGatoAbajo;
 
@@ -174,7 +174,7 @@ function reiniciarJuego() {
   clearInterval(intervaloMovimiento);
 
   puntaje = 0;
-  tiempo = 30;
+  tiempo = 15;
   direccion = "abajo";
   imgGatoActual = imgGatoAbajo;
 
