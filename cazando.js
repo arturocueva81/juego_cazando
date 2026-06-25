@@ -221,4 +221,8 @@ function mostrarMensaje(tipo) {
   }
 }
 
+function saludar(){
+  alert("Hola Mundo");
+}
+
 document.getElementById("btnReiniciar").onclick = () => reiniciarJuego();
